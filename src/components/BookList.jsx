@@ -1,6 +1,9 @@
 import Book from "./Book"
+import { useContext } from "react"
+import { BooksContext } from "../context/booksContext"
+const BookList = () => {
 
-const BookList = ({ books, deleteBook, updateBook }) => {
+  const { books } = useContext(BooksContext)
   return (
     <section className="books-list-container" aria-labelledby="books-heading">
       <header className="books-list-header">
@@ -10,7 +13,7 @@ const BookList = ({ books, deleteBook, updateBook }) => {
 
       <div className="books-grid">
         {books && books.length > 0 ? (
-          books.map((book) => <Book deleteBook={deleteBook} updateBook={updateBook} key={book.id} book={book} />)
+          books.map((book) => <Book  key={book.id} book={book} />)
         ) : (
           <div className="empty-state">No books added yet — start by adding one.</div>
         )}

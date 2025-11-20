@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { FiEdit2, FiTrash2 } from 'react-icons/fi'
 import UpdateBookForm from './UpdateBookForm'
-
-const Book = ({ book, deleteBook, updateBook }) => {
+import { useContext } from 'react'
+import { BooksContext } from '../context/booksContext'
+const Book = ({ book }) => {
 
   const [updateVisible, setUpdateVisible] = useState(false)
 
